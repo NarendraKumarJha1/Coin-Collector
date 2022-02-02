@@ -1,67 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[DisallowMultipleComponent]
 public class MovingScripts : MonoBehaviour
 {
-    //public float minClamp;
-    //public float maxClamp;
-    //public float speed;
-    //int y
-    //public void Update()
-    //{
-    //    float y = Mathf.PingPong(Time.time * speed, 1) * 6 - 3;
-    //    var pos = Mathf.Clamp(y, minClamp, maxClamp);
-    //    gameObject.transform.position = new Vector3(transform.position.x, pos, transform.position.z);
-
-    //}
-    //public void Update()
-    //{
-    //    if (y >= 3)
-    //    {
-    //        y = y - speed * Time.deltaTime;
-    //    }
-    //    if (y < 3)
-    //    {
-    //        y = y + speed * Time.deltaTime;
-    //    }
-    //    apple.transform.position = new Vector3(0, y, 0);
-    //}
-
-
-    
-    public int loopHeight = 10;
-    public bool checkAtMax = false;
-    public int minyClamp;
-    public int maxyClamp;
-
-
-
-    void Update()
+    [SerializeField]
+    float period = 2f;
+    [SerializeField]
+    Vector3 MovementFactor = new Vector3(10f, 10f, 10f);
+    [Range(0, 1)] [SerializeField] float movementSlider;
+    Vector3 originalPos;
+    // Start is called before the first frame update
+    void Start()
     {
-
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(transform.position.x, minyClamp, maxyClamp);
-        transform.position = pos;
-
-        if (checkAtMax)
-        {
-            for (int x = 0; x < loopHeight; ++x)
-            {
-                gameObject.transform.position -= new Vector3(0, transform.position.y, 0);
-                if (x == loopHeight - 1)
-                    checkAtMax = false;
-            }
-        }
-        else
-        {
-            for (int x = 0; x < loopHeight; ++x)
-            {
-                gameObject.transform.position += new Vector3(0, transform.position.y, 0);
-                if (x == loopHeight - 1)
-                    checkAtMax = true;
-            }
-        }
+        originalPos = transform.position;
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        float cycle = Time.time / period;
+        const float tau = Mathf.PI * 2f;
+        float rawSineWave = Mathf.Sin(cycle * tau);
+        movementSlider = rawSineWave / 2f + 0.5f;
+
+        Vector3 offset = movementSlider * MovementFactor;
+        transform.position = offset + originalPos;
+    }
 }

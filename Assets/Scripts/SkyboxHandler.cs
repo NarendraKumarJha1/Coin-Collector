@@ -72,15 +72,6 @@ public class SkyboxHandler : MonoBehaviour
         {
             RenderSettings.skybox = SkyBoxArray[9];
         }
-        else if (Input.GetButtonDown("a"))
-        {
-            RenderSettings.skybox = SkyBoxArray[10];
-        }
-        else if (Input.GetButtonDown("b"))
-        {
-            RenderSettings.skybox = SkyBoxArray[11];
-        }
-
 
 
     }

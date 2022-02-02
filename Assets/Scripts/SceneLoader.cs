@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,16 +7,46 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject pauseMenuUI;
+
+    bool IsPaused;
+
     void Start()
     {
+        IsPaused = false;
+        pauseMenuUI.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (IsPaused == false)
+            {
+                Paused();
+            }
+            else
+            {
+                Resume();
+            }
+                
+
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Resume()
     {
-        
+        IsPaused = false;
+        Time.timeScale = 1f;
+        pauseMenuUI.SetActive(false);
+    }
+
+    public void Paused()
+    {
+        IsPaused = true;
+        Time.timeScale = 0f;
+        pauseMenuUI.SetActive(true);
     }
 
     public void MainMenu()
