@@ -8,16 +8,12 @@ public class SceneLoader : MonoBehaviour
 {
     public GameObject pauseMenuUI;
 
-    public GameObject MainMenuUI;
-    public GameObject ShowUI;
-    public GameObject HideUI;
-
     bool IsPaused;
 
     void Start()
     {
         IsPaused = false;
-        MainMenuUI.SetActive(false);
+        
         pauseMenuUI.SetActive(false);
     }
 
@@ -66,20 +62,5 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void ShowMainMenu()
-    {
-        ShowUI.SetActive(false);
-        MainMenuUI.SetActive(true);
-        HideUI.SetActive(true);
-    }
-    public void HideMenuUI()
-    {
-        HideUI.SetActive(false);
-        MainMenuUI.SetActive(false);
-        ShowUI.SetActive(true);
-    }
-    public void OnApplicationQuit()
-    {
-        Application.Quit();
-    }
+    
 }

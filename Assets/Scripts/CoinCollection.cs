@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 
 public class CoinCollection : MonoBehaviour
 {
@@ -15,11 +15,19 @@ public class CoinCollection : MonoBehaviour
     [SerializeField]
     AudioClip potionSFX;
 
+    [SerializeField]
+    GameObject GameOverUI;
+
+    [SerializeField]
+    GameObject WinScreenUI;
+
     int CoinCount = 0;
     // Start is called before the first frame update
     void Start()
     {
         CoinScore.text = "XX";
+        GameOverUI.SetActive(false);
+        WinScreenUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,6 +54,19 @@ public class CoinCollection : MonoBehaviour
             other.gameObject.SetActive(false);
             Destroy(other.gameObject, 1f);
         }
+        else if (other.gameObject.CompareTag("Finish"))
+        {
+            Time.timeScale = 0f;
+            GameOverUI.SetActive(true);
+        }
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Pandora"))
+        {
+            Time.timeScale = 0f;
+            WinScreenUI.SetActive(true);
+        }
     }
 }
