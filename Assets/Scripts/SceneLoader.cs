@@ -29,8 +29,6 @@ public class SceneLoader : MonoBehaviour
             {
                 Resume();
             }
-                
-
         }
         
     }
@@ -50,7 +48,7 @@ public class SceneLoader : MonoBehaviour
         pauseMenuUI.SetActive(true);
     }
 
-    public void MainMenu()
+    private void MainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
@@ -61,6 +59,9 @@ public class SceneLoader : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
-
-    
+    public void MainMenuUI()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
 }
