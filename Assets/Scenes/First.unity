@@ -2718,6 +2718,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 877400357}
     m_Modifications:
     - target: {fileID: 1324923771, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
+      propertyPath: ScoreUI
+      value: 
+      objectReference: {fileID: 925276252}
+    - target: {fileID: 1324923771, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: CoinScore
       value: 
       objectReference: {fileID: 925276254}
@@ -2737,6 +2741,10 @@ PrefabInstance:
       propertyPath: scoreIncrease
       value: 
       objectReference: {fileID: 7400000, guid: 2f77421caf530374f9c45c976fa4ab2d, type: 2}
+    - target: {fileID: 1324923771, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
+      propertyPath: coinScoreHolder
+      value: 
+      objectReference: {fileID: 6294060}
     - target: {fileID: 4425428723088313499, guid: fc9b148a2950aaf4cba8422632222c5d,
         type: 3}
       propertyPath: m_Name

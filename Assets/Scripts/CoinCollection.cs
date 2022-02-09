@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class CoinCollection : MonoBehaviour
 {
     [SerializeField]
+    GameObject coinScoreHolder;
+
+
+    [SerializeField]
     TextMeshProUGUI CoinScore;
 
     [SerializeField]
@@ -21,15 +25,15 @@ public class CoinCollection : MonoBehaviour
     [SerializeField]
     GameObject WinScreenUI;
 
-    public GameObject scoreText;
-    private Animation Anim;
+    private Animator scoreAnim;
+    public GameObject ScoreUI;
 
     int CoinCount = 0;
 
 
     void Start()
     {
-       Anim = scoreText.GetComponent<Animation>();
+        scoreAnim = ScoreUI.GetComponent<Animator>();
         CoinScore.text = "XX";
         GameOverUI.SetActive(false);
         WinScreenUI.SetActive(false);
@@ -51,7 +55,7 @@ public class CoinCollection : MonoBehaviour
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
             Destroy(other.gameObject, 1f);
-            Anim.Play();
+            scoreAnim.SetTrigger("Set");
         }
         else if (other.gameObject.CompareTag("Coin"))
         {
@@ -60,12 +64,13 @@ public class CoinCollection : MonoBehaviour
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
             Destroy(other.gameObject, 1f);
-            Anim.Play();
+            scoreAnim.SetTrigger("Set");
         }
         else if (other.gameObject.CompareTag("Finish"))
         {
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
+            coinScoreHolder.SetActive(false);
         }
 
     }
