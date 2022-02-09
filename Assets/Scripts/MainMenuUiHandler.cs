@@ -8,6 +8,7 @@ public class MainMenuUiHandler : MonoBehaviour
 {
     public GameObject MainMenuUI;
     public GameObject ShowUI;
+    public GameObject gameTitleUI;
     public GameObject HideUI;
     public AudioClip ClickSFX;
     void Start()
@@ -39,6 +40,7 @@ public class MainMenuUiHandler : MonoBehaviour
         ShowUI.SetActive(false);
         MainMenuUI.SetActive(true);
         HideUI.SetActive(true);
+        gameTitleUI.SetActive(false);
     }
     public void HideMenuUI()
     {
@@ -46,6 +48,7 @@ public class MainMenuUiHandler : MonoBehaviour
         HideUI.SetActive(false);
         MainMenuUI.SetActive(false);
         ShowUI.SetActive(true);
+        gameTitleUI.SetActive(true);
     }
     public void OnApplicationQuit()
     {

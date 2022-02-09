@@ -21,16 +21,22 @@ public class CoinCollection : MonoBehaviour
     [SerializeField]
     GameObject WinScreenUI;
 
+    public GameObject scoreText;
+    private Animation Anim;
+
     int CoinCount = 0;
-    // Start is called before the first frame update
+
+
     void Start()
     {
+       Anim = scoreText.GetComponent<Animation>();
         CoinScore.text = "XX";
         GameOverUI.SetActive(false);
         WinScreenUI.SetActive(false);
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
 
@@ -45,6 +51,7 @@ public class CoinCollection : MonoBehaviour
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
             Destroy(other.gameObject, 1f);
+            Anim.Play();
         }
         else if (other.gameObject.CompareTag("Coin"))
         {
@@ -53,6 +60,7 @@ public class CoinCollection : MonoBehaviour
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
             Destroy(other.gameObject, 1f);
+            Anim.Play();
         }
         else if (other.gameObject.CompareTag("Finish"))
         {
