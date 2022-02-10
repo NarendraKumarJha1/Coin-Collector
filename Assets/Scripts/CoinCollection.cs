@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class CoinCollection : MonoBehaviour
 {
-    [SerializeField]
-    GameObject coinScoreHolder;
-
 
     [SerializeField]
     TextMeshProUGUI CoinScore;
+
+    [SerializeField]
+    TextMeshProUGUI CoinScoreGameOver;
+
+    [SerializeField]
+    GameObject InitialUI;
 
     [SerializeField]
     AudioClip coinSFX;
@@ -68,9 +71,10 @@ public class CoinCollection : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Finish"))
         {
+            CoinScoreGameOver.text = CoinCount.ToString();
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
-            coinScoreHolder.SetActive(false);
+            InitialUI.SetActive(false);
         }
 
     }
