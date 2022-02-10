@@ -14,6 +14,9 @@ public class CoinCollection : MonoBehaviour
     TextMeshProUGUI CoinScoreGameOver;
 
     [SerializeField]
+    TextMeshProUGUI CoinScorePausedUI;
+
+    [SerializeField]
     GameObject InitialUI;
 
     [SerializeField]
@@ -28,6 +31,9 @@ public class CoinCollection : MonoBehaviour
     [SerializeField]
     GameObject WinScreenUI;
 
+    [SerializeField]
+    GameObject pausedScreen;
+
     private Animator scoreAnim;
     public GameObject ScoreUI;
 
@@ -40,6 +46,7 @@ public class CoinCollection : MonoBehaviour
         CoinScore.text = "XX";
         GameOverUI.SetActive(false);
         WinScreenUI.SetActive(false);
+        pausedScreen.SetActive(false);
     }
 
 
@@ -72,6 +79,7 @@ public class CoinCollection : MonoBehaviour
         else if (other.gameObject.CompareTag("Finish"))
         {
             CoinScoreGameOver.text = CoinCount.ToString();
+            CoinScorePausedUI.text = CoinCount.ToString();
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
             InitialUI.SetActive(false);
@@ -85,5 +93,9 @@ public class CoinCollection : MonoBehaviour
             Time.timeScale = 0f;
             WinScreenUI.SetActive(true);
         }
+    }
+    public GameObject GetInitialUI()
+    {
+        return InitialUI;
     }
 }
