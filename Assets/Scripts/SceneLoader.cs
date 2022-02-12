@@ -9,11 +9,10 @@ public class SceneLoader : MonoBehaviour
     public GameObject pauseMenuUI;
     CoinCollection coin;
     bool IsPaused;
-    private GameObject InitialUI;
     void Start()
     {
         IsPaused = false;
-        InitialUI = coin.GetInitialUI() as GameObject;
+     
         pauseMenuUI.SetActive(false);
     }
 

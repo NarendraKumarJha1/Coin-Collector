@@ -6,39 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class CoinCollection : MonoBehaviour
 {
-
-    [SerializeField]
-    TextMeshProUGUI CoinScore;
-
-    [SerializeField]
-    TextMeshProUGUI CoinScoreGameOver;
-
-    [SerializeField]
-    TextMeshProUGUI CoinScorePausedUI;
-
-    [SerializeField]
-    GameObject InitialUI;
-
+    [Header("SFX")]
     [SerializeField]
     AudioClip coinSFX;
-
     [SerializeField]
     AudioClip potionSFX;
 
+    [Header("TMP")]
+    [SerializeField]
+    TextMeshProUGUI CoinScore;
+    [SerializeField]
+    TextMeshProUGUI CoinScoreGameOver;
+    [SerializeField]
+    TextMeshProUGUI CoinScorePausedUI;
+
+    [Header("UI")]
+    [SerializeField]
+    GameObject InitialUI;
     [SerializeField]
     GameObject GameOverUI;
-
     [SerializeField]
     GameObject WinScreenUI;
-
     [SerializeField]
     GameObject pausedScreen;
+    public GameObject ScoreUI;
 
+    [Header("VFX")]
     [SerializeField]
     ParticleSystem coinDestroyVFX;
 
     private Animator scoreAnim;
-    public GameObject ScoreUI;
+    
 
     int CoinCount = 0;
 
@@ -77,8 +75,8 @@ public class CoinCollection : MonoBehaviour
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
-            ParticleSystem destroyVFX= Instantiate(coinDestroyVFX,transform.position,Quaternion.identity);
-            Destroy(coinDestroyVFX, 1f);
+            ParticleSystem destroyVFX= Instantiate(coinDestroyVFX,other.transform.position,Quaternion.identity);
+            Destroy(destroyVFX, 1f);
             scoreAnim.SetTrigger("Set");
         }
         else if (other.gameObject.CompareTag("Finish"))
