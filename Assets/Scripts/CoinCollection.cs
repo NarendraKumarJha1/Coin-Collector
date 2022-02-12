@@ -34,6 +34,9 @@ public class CoinCollection : MonoBehaviour
     [SerializeField]
     GameObject pausedScreen;
 
+    [SerializeField]
+    ParticleSystem coinDestroyVFX;
+
     private Animator scoreAnim;
     public GameObject ScoreUI;
 
@@ -64,7 +67,7 @@ public class CoinCollection : MonoBehaviour
             CoinCount += 5;
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
-            Destroy(other.gameObject, 1f);
+            DestroyImmediate(other.gameObject);
             scoreAnim.SetTrigger("Set");
         }
         else if (other.gameObject.CompareTag("Coin"))
@@ -73,7 +76,9 @@ public class CoinCollection : MonoBehaviour
             CoinCount += 1;
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
-            Destroy(other.gameObject, 1f);
+            Destroy(other.gameObject);
+            ParticleSystem destroyVFX= Instantiate(coinDestroyVFX,transform.position,Quaternion.identity);
+            Destroy(coinDestroyVFX, 1f);
             scoreAnim.SetTrigger("Set");
         }
         else if (other.gameObject.CompareTag("Finish"))

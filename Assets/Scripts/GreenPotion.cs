@@ -6,6 +6,12 @@ public class GreenPotion : MonoBehaviour
 {
     [SerializeField] Transform sfx;
 
+
+    public Vector3 pos;
+        
+
+
+
     void Start()
     {
         
@@ -16,7 +22,7 @@ public class GreenPotion : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Instantiate(sfx, new Vector3(transform.position.x,transform.position.y,transform.position.z),Quaternion.identity);
+        Instantiate(sfx, pos,Quaternion.identity);
         Destroy(sfx, 1f);
     }
 }

@@ -9672,7 +9672,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013828724138}
   - component: {fileID: 7772484747030488637}
-  - component: {fileID: 2216183272744628188}
   m_Layer: 0
   m_Name: Bottle_Endurance
   m_TagString: Potion
@@ -9709,18 +9708,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.54040086, y: 0.6982086, z: 0.54704964}
   m_Center: {x: -0.02823335, y: 1.0191042, z: 0.008107901}
---- !u!114 &2216183272744628188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013846074356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b019f5614e2a1a448b88049899138a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1000014110595150
 GameObject:
   m_ObjectHideFlags: 0
