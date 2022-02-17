@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Potion
   - Pandora
+  - Next
   layers:
   - Default
   - TransparentFX
