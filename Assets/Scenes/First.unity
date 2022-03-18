@@ -6809,6 +6809,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64304381397631366, guid: d40e6ae8e2813774882bcaf23d9a9cd6,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64304381397631366, guid: d40e6ae8e2813774882bcaf23d9a9cd6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40e6ae8e2813774882bcaf23d9a9cd6, type: 3}
 --- !u!4 &302507821 stripped
@@ -17947,7 +17957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877400356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1910483476}
@@ -19059,6 +19069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quart_WallDoorFrame_01_snaps002
       objectReference: {fileID: 0}
+    - target: {fileID: 1872819607723068, guid: 094421f9be446df49b40d4ecedf1d4c2, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 4640179471571114, guid: 094421f9be446df49b40d4ecedf1d4c2, type: 3}
       propertyPath: m_RootOrder
       value: 177
@@ -19102,6 +19116,16 @@ PrefabInstance:
     - target: {fileID: 4640179471571114, guid: 094421f9be446df49b40d4ecedf1d4c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64171785348299864, guid: 094421f9be446df49b40d4ecedf1d4c2,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64171785348299864, guid: 094421f9be446df49b40d4ecedf1d4c2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 094421f9be446df49b40d4ecedf1d4c2, type: 3}
@@ -23364,7 +23388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1125697942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24001,31 +24025,6 @@ PrefabInstance:
     - target: {fileID: 4768704789187734, guid: 691269d06a74ab245ae4360e978425bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2440483833119263633, guid: 691269d06a74ab245ae4360e978425bd,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 2440483833119263633, guid: 691269d06a74ab245ae4360e978425bd,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.6089662
-      objectReference: {fileID: 0}
-    - target: {fileID: 2440483833119263633, guid: 691269d06a74ab245ae4360e978425bd,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.87500536
-      objectReference: {fileID: 0}
-    - target: {fileID: 2440483833119263633, guid: 691269d06a74ab245ae4360e978425bd,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 1.1875
-      objectReference: {fileID: 0}
-    - target: {fileID: 2440483833119263633, guid: 691269d06a74ab245ae4360e978425bd,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.24198401
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 691269d06a74ab245ae4360e978425bd, type: 3}
@@ -38650,6 +38649,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1817977748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1818092514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 155548, guid: d50f5f5d5a171443fa76bc1f6fc90473,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363954758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1818092515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818092514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.393479, z: 1.9129841}
+  m_Center: {x: 0, y: -0.3502568, z: 0.19503295}
 --- !u!1001 &1818348610
 PrefabInstance:
   m_ObjectHideFlags: 0

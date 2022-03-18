@@ -65,7 +65,7 @@ public class CoinCollection : MonoBehaviour
             CoinCount += 5;
             CoinScore.text = CoinCount.ToString();
             other.gameObject.SetActive(false);
-            DestroyImmediate(other.gameObject);
+            Destroy(other.gameObject);
             scoreAnim.SetTrigger("Set");
         }
         else if (other.gameObject.CompareTag("Coin"))
@@ -87,7 +87,6 @@ public class CoinCollection : MonoBehaviour
             GameOverUI.SetActive(true);
             InitialUI.SetActive(false);
         }
-
     }
     private void OnCollisionEnter(Collision collision)
     {

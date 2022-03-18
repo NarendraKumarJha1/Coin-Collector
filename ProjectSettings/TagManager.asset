@@ -9,6 +9,7 @@ TagManager:
   - Potion
   - Pandora
   - Next
+  - Door
   layers:
   - Default
   - TransparentFX
